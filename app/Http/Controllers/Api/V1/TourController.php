@@ -19,16 +19,17 @@ class TourController extends Controller
                 $query->where('price','<=',$request->priceTo*100);
             })
             ->when($request->dateFrom,function ($query) use ($request){
-                $query->where('startingDate','>=',$request->dateFrom);
+                $query->where('starting_date','>=',$request->dateFrom);
             })
             ->when($request->dateFrom,function ($query) use ($request){
-                $query->where('startingDate','>=',$request->dateFrom);
+                $query->where('starting_date','>=',$request->dateFrom);
             })
             ->when($request->dateTo,function ($query) use ($request){
-                $query->where('startingDate','<=',$request->dateTo);
+                $query->where('starting_date','<=',$request->dateTo);
             })
             ->when($request->sortBy&&$request->sortOrder,function ($query) use ($request){
-                $query->where($request->sortBy,$request->sortOrder);
+
+                $query->orderBy($request->sortBy,$request->sortOrder);
             })
 
             ->orderBy('starting_date')
