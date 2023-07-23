@@ -31,7 +31,7 @@ Route::prefix('admin')->middleware(['auth:sanctum',])->group(function (){
         Route::post('travels/{travel}/tours',[Admin\TourController::class,'store']);
 
     });
-    Route::post('travels/{travel}',[Admin\TravelController::class,'update']);
+    Route::put('travels/{travel}',[Admin\TravelController::class,'update']);
 
 });
 Route::post('login',\App\Http\Controllers\Api\V1\Auth\LoginController::class);
