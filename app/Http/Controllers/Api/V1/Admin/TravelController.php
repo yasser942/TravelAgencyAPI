@@ -12,6 +12,7 @@ class TravelController extends Controller
 {
     public function store(TravelRequest $request){
         $travel= Travel::create($request->validated());
+
         return new TravelResource($travel);
 
     }

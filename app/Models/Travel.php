@@ -12,7 +12,7 @@ class Travel extends Model
 {
     use HasFactory,Sluggable,HasUuids;
     protected $table='travels';
-    protected $fillable=['name', 'description','slug','number_of_days'];
+    protected $fillable=['name', 'description','slug','number_of_days','is_public'];
     public function sluggable(): array
     {
         return [
