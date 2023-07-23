@@ -21,10 +21,6 @@ class TourResource extends JsonResource
             'ending_date' => $this->ending_date,
             'price' => number_format($this->price, 2),
 
-
-
-
-
         ];
     }
 }
